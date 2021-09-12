@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("./fonts/poppins/Poppins-Bold.ttf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "poppins";
+  src: url("./fonts/poppins/Poppins-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "poppins";
+  src: url("./fonts/poppins/Poppins-Medium.ttf");
+  font-weight: 500;
+}
+.container {
+  width: 90%;
+}
+
+.mx-a {
+  margin: 0 auto;
+}
+
+.home {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  height: 100vh;
+}
+.home .caption {
+  text-align: center;
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.home .caption * {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: poppins;
+}
+.home .caption h5 {
+  width: 60%;
+  margin: 0 auto;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.home .caption h1 {
+  text-transform: uppercase;
+  line-height: 55px;
+  margin-bottom: 30px;
+  font-weight: 900;
+  font-size: 50px;
+}
+.home .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.home .kiri-bawah {
+  position: absolute;
+  z-index: 2;
+  bottom: -20px;
+  left: -20px;
+  width: 35vw;
+}
+.home .kiri-bawah imgs {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.home .kanan-bawah {
+  position: absolute;
+  z-index: 2;
+  bottom: -10px;
+  right: -10px;
+  width: 30vw;
+}
+.home .kanan-bawah img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.home .birds {
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 400px;
+  height: 400px;
+}
+.home .birds .birds-inner-c {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.home .birds .birds-inner-c > div {
+  position: absolute;
+}
+.home .birds .birds-inner-c > div img {
+  width: 100%;
+  background: green;
+}
+.home .birds .birds-inner-c > div.bird_3 {
+  right: 0;
+  width: 160px;
+  -webkit-animation: burung 3s linear infinite alternate;
+  animation: burung 3s linear infinite alternate;
+}
+.home .birds .birds-inner-c > div.bird_1 {
+  top: 30%;
+  width: 80px;
+  -webkit-animation: burung 2s linear infinite alternate;
+  animation: burung 2s linear infinite alternate;
+}
+.home .birds .birds-inner-c > div.bird_2 {
+  -webkit-animation: burung 2s linear infinite alternate;
+  animation: burung 2s linear infinite alternate;
+  left: 40%;
+  background: red;
+  width: 180px;
+  top: 30%;
+}
+
+.x {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.a {
+  position: absolute;
+  width: 50px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: red;
+  -webkit-animation: swing 2s ease-in infinite;
+  animation: swing 2s ease-in infinite;
+}
+
+@-webkit-keyframes burung {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(3%);
+  }
+}
+@keyframes burung {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+@-webkit-keyframes swing {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes swing {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.map */
