@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simarmas - Gar</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/fa/css/all.min.css">
+    <link rel="shortcut icon" href="./assets/images/fav.png"/>
+
+</head>
+<body>
+    <div>
+        <div class="home map">
+            <div class="page-title">The Map</div>
+            <div class="page-desc">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus laborum iusto delectus excepturi maiores dignissimos ab modi? Reprehenderit, omnis!
+                </p>
+                <h3 data-title>Plantation Operations</h3>
+                <p data-desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, autem? Magnam, voluptates eius! Iure obcaecati porro harum, modi perferendis soluta.</p>
+            </div>
+            <div id="topbar-c"></div>
+            <div class="content">
+                <div class="desc">
+                    <h2>Palm Oil Plantation</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+
+                <div data-scalar-y="13" id="scene-map-cloud-1" data-invert-y="false" data-invert-x="false" class="cloud cloud-1">
+                    <img src="./assets/images/map-cloud-1.png" alt="" data-depth=".1">
+                </div>
+                <div data-scalar-y="13" id="scene-map-cloud-2" class="cloud cloud-2">
+                    <img src="./assets/images/map-cloud-2.png" alt="" data-depth=".1" >
+                </div>
+
+                <img class="land" src="./assets/images/map-land.png" alt="">
+
+                <div data-hover data-title="Peat Management" data-desc="aa" class="spot spot-1">
+                    <a href="https://google.com" class="spot-content">
+                        <img src="./assets/images/peatland.png" />
+                        Peat Management
+                    </a>
+                    <div class="line v"></div>
+                    <div class="red-dot"></div>
+                </div>
+
+                <div data-hover data-title="Plantation Operations" data-desc="bb" class="spot spot-2">
+                    <a href="#" class="b">
+                        <img src="./assets/images/high-conservation-value-[HCV].png" />
+                        Plantation<br />Operations
+                    </a>
+                    <div class="line v"></div>
+                    <div class="red-dot"></div>
+                </div>
+
+                <div data-hover data-title="Employees' Welfare" data-desc="cc" class="spot spot-3">
+                    <a href="#" class="c">
+                        <img src="./assets/images/palm-oil-plantation.png" />
+                        Employees'<br />Welfare
+                    </a>
+                    <div class="line v"></div>
+                    <div class="red-dot"></div>
+                </div>
+
+                <div data-hover data-title="Mill Operations" data-desc="dd" class="spot spot-4">
+                    <a href="#" class="d">
+                        <img src="./assets/images/mill.png" />
+                        Mill Operations
+                    </a>
+                    <div class="line v"></div>
+                    <div class="red-dot"></div>
+                </div>
+
+                <div data-hover data-title="Community Engagement" data-desc="ee" class="spot spot-5">
+                    <div class="red-dot"></div>
+                    <div class="line v"></div>
+                    <a href="#" class="e">
+                        <img src="./assets/images/community-engagement.png" />
+                        Community<br />Engagement
+                    </a>
+                </div>
+
+                <div data-hover data-title="Enviromental Management" data-desc="ff" class="spot spot-6">
+                    <div class="red-dot"></div>
+                    <div class="line v"></div>
+                    <a href="#" class="f">
+                        <img src="./assets/images/enviromental-management.png" />
+                        Enviromental<br />Management
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./assets/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+    <script>
+        const scene = document.querySelectorAll("[id^='scene']");
+        const desc = document.querySelector('.desc');
+
+        document.querySelectorAll('[data-hover]').forEach(el => {
+            el.addEventListener('mouseover', function(){
+                document.querySelector(".page-desc [data-title]").innerHTML = el.dataset.title
+                document.querySelector(".page-desc [data-desc]").innerHTML = el.dataset.desc
+            })
+        })
+
+        scene.forEach(s => {
+            new Parallax(s);
+        })
+    </script>
+
+</body>
+</html>

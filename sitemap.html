@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simarmas - Gar</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <link rel="stylesheet" href="./assets/fa/css/fontawesome.min.css">
+    <link rel="shortcut icon" href="./assets/images/fav.png"/>
+</head>
+<body>
+    <div>
+        <div class="home layout-1 sitemap">
+            <div class="content">
+                <div class="content-inner">
+                    <div class="kiri">
+                        <h1>Site Map</h1>
+                        <hr>
+                        <h2>Mills</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam sit, id necessitatibus placeat at in distinctio amet ratione veniam</p>
+                    </div>
+                    <div class="kanan">
+                        <div class="tahukah-kamu">
+                            <h3>
+                                <img src="/assets/images/bulp.png" alt="">
+                                <span>Tahukah Kamu ?</span>
+                            </h3>
+                            <p>Proses pengolahan CPO kami menggunakan energi terbarukan yang dihasilkan dari biomasa kelapa sawit itu sendiri, yakni shell dan fibre.</p>
+                            <p>Energi itu menghasilkan listrik untuk mengoperasikan mesin-mesin di pabrik (turbin) dan menghasilkan uap untuk proses rebusan.</p>
+                        </div>
+                        <!-- <img class="ss" src="./assets/images/sitemap.png" alt=""> -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="topbar-c">
+            </div>
+
+            <div data-scalar-x="1" data-invert-y="false" data-invert-x="false" class="bg-1" id="scene-1">
+                <img data-depth=".1" src="./assets/images/sitemap-3.png" alt="">
+            </div>
+
+            <div data-scalar-x="3" class="bg-2" id="scene-1">
+                <img data-depth=".5" src="./assets/images/sitemap-2.png" alt="">
+            </div>
+
+            <div data-scalar-x="1" class="bg-3" id="scene-1">
+                <img data-depth=".1" src="./assets/images/sitemap-1.png" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./assets/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+
+    <script>
+        const scene = document.querySelectorAll("[id^='scene']");
+        const descContentContainer = document.querySelector('.desc-content');
+        const sitemapContent = document.querySelector('.content-inner > .kanan');
+        const smItems = [
+            {
+                title: 'TBS',
+                subtitle: 'Tandan Buah Segar',
+                svg: 'tbs',
+                line: [0,0,300,0]
+            },{
+                title: 'Weightbridge',
+                subtitle: 'Jembatan Tambang',
+                desc: 'Truk TBS masuk dalam jembatan tambang untung menghitung berat bersih TBS',
+                svg: 'weightbridge',
+                line: [0,0,300,0]
+            },{
+                title: 'LOADING RAMP HOPPER',
+                subtitle: 'Tandan Buah Segar',
+                desc: 'Menerima TBS dari truk dan mendistribusikannya ke setiap cage/lori yang berada di bawah loading ramp hopper dengan prinsip first in first out',
+                svg: 'loading-ramp',
+                line: [0,0,300,0]
+            },{
+                title: 'STERILISER',
+                subtitle: 'Rebusan',
+                desc: 'TBS direbus dengan menggunakan panas dari steam dengan tekanan sebesar 3 Barg secara konveksi dan konduksi',
+                svg: 'streliser',
+                line2: [0,0,0,300],
+                line: [0,0,300,0]
+
+            },{
+                title: 'CPO',
+                subtitle: 'Crude Palm Oil',
+                svg: 'CPO'
+            },{
+                title: 'Clarification Station',
+                subtitle: 'Stasiun Pemurni Minyak',
+                desc: 'Memisahkan CPO dari solid / kotoran dan mengurangi kadar air',
+                svg: 'clarification-st',
+                line: [0,0,300,0],
+                line2: [0,0,0,300],
+            },{
+                title: 'Screw Press',
+                subtitle: 'Sekrup Pemeras',
+                desc: 'Mengekstrasi berondolan untuk mengeluarkan minyak dari daging buah agar mendapatkan rendeman minyak sawit mentah yang maksimal dan nut pecah yang minimal',
+                svg: 'screw-press',
+                line: [0,0,300,0],
+                line2: [0,0,0,300],
+            },{
+                title: 'Thresher Drum',
+                subtitle: 'Drum Penebah',
+                desc: 'Merontokkan dan memisahkan berondolan dari janjang TBS dengan cara diputar dan dibanting',
+                svg: 'tresher-drum',
+                line: [0,0,300,0],
+                line2: [0,0,300,0],
+            },{
+                title: 'Empty Bunch Conveyor',
+                desc: 'Merontokkan dan memisahkan berondolan dari janjang TBS dengan cara diputar dan dibanting',
+                svg: 'empty-bunch',
+            }, {
+                title: 'Kolam Limbah',
+                svg: 'kolam-limbah',
+                line: [0,0,300,0],
+
+            }, {
+                title: 'Nut and Kernel Station',
+                subtitle: 'Stasiun Nut dan Kernel',
+                desc: 'Memisahkan cangkang sawit dengan inti sawit / palm kernal',
+                svg: 'nut-and-kernel-st',
+                line: [0,0,300,0]
+            }, {
+                title: 'Shell and Fibre',
+                svg: 'sheel-fiber',
+                line: [0,0,300,0],
+                line2: [0,0,0,300],
+            },{
+                title: 'Palm Kernel',
+                svg: 'palm-kernel',
+                line: [0,0,300,0],
+            }, {
+                title: 'Palm Kernel Meal' ,
+                svg: 'palm-kernel-meal'
+            }, {
+                title: 'CPKO' ,
+                subtitle: 'Crude Palm Kernel Oil' ,
+                svg: 'CPKO',
+                line: [0,0,300,0],
+                line2: [0,0,0,300],
+            }
+        ]
+
+        const generateDash = (line, className = '') => {
+            return `
+                <div class="dash ${className}">
+                    <img src="/assets/images/play.png" />
+                    <svg>
+                        <line
+                            x1="${line?.[0] ?? 0}"
+                            y1="${line?.[1] ?? 0}"
+                            x2="${line?.[2] ?? 0}"
+                            y2="${line?.[3] ?? 0}"
+                        />
+                    </svg>
+                </div>
+            `;
+        }
+
+        smItems.forEach(item => {
+
+            const className = item.title.split(' ').join('_').toLowerCase();
+            const subTitle = item.subtitle ? `<span class="sm-item-subtitle">${item.subtitle}</span>` : '';
+            const desc = item.desc ? `<span class="sm-item-desc">${item.desc}</span>` : '';
+            const line = item.line ? generateDash(item.line) : ``;
+            const line2 = item.line2 ? generateDash(item.line2, 'b') : ``;
+            const url = item?.url ?? '#';
+
+            sitemapContent.insertAdjacentHTML('beforeend', `
+                <div class="sitemap-item ${className}">
+                    <a href="${url}" class="inner">
+                        <img src="./assets/images/${item.svg}.svg" alt="">
+                        <div class="sm-item-caption">
+                            <span class="sm-item-title">${item.title}</span>
+                            ${subTitle}
+                            ${desc}
+                        </div>
+                        ${line}
+                        ${line2}
+                    </a>
+                </div>
+            `);
+        })
+
+        scene.forEach(s => {
+            new Parallax(s);
+        })
+
+        const toggleDesc = (event) => {
+            descContentContainer.classList.toggle('hide')
+            event.target.classList.toggle('state-show')
+        }
+    </script>
+
+</body>
+</html>

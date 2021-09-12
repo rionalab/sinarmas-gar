@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simarmas - Gar</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <link rel="stylesheet" href="./assets/fa/css/fontawesome.min.css">
+    <link rel="shortcut icon" href="./assets/images/fav.png"/>
+</head>
+<body>
+    <div>
+        <div class="home layout-1 mill-process">
+            <div class="content">
+                <div class="content-inner">
+                    <a href="#" class="icon-1">
+                        <img src="./assets/images/icon-1.png" alt="">
+                    </a>
+                    <div class="item item-1">
+                        <img src="./assets/images/e-1.png" alt="">
+                    </div>
+                    <div class="item item-2">
+                        <img src="./assets/images/e-2.png" alt="">
+                    </div>
+                    <div class="item item-3">
+                        <img src="./assets/images/e-3.png" alt="">
+                    </div>
+                    <div class="desc">
+                        <div class="btn-close-desc">
+                            <button onclick="toggleDesc(event)">
+                                &times;
+                            </button>
+                        </div>
+                        <div class="desc-content">
+                            <div class="a">
+                                <img src="./assets/images/icon-2.png" alt="">
+                                <img src="./assets/images/icon-3.png" alt="">
+                            </div>
+                            <div class="b">
+                                <span>Share :</span>
+                                <div>
+                                    <img src="./assets/images/fb.png" alt="">
+                                    <img src="./assets/images/tw.png" alt="">
+                                </div>
+                            </div>
+                            <div class="c">
+                                <h3>Ruang Literasi</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dolorum provident, consequatur ipsa magni nobis quam aut a sapiente similique!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <p>
+                            <span></span>
+                            <span>Kebun<br>Belajar</span> 
+                        </p>
+                        <p class="active">
+                            <span></span>
+                            <span>Ruang<br>Literasi</span>
+                        </p>
+                        <p>
+                            <span></span>
+                            <span>Rumah<br>Pintar</span>
+                        </p>
+                    </div>
+                    <img class="img-bg" src="./assets/images/bg-mill.jpg" alt="">
+                </div>
+            </div>
+            
+            <div id="topbar-c">
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+
+    <script>
+        const scene = document.querySelectorAll("[id^='scene']");
+        const descContentContainer = document.querySelector('.desc-content');
+
+        scene.forEach(s => {
+            new Parallax(s);
+        })
+
+        const toggleDesc = (event) => {
+            descContentContainer.classList.toggle('hide')
+            event.target.classList.toggle('state-show')
+        }
+    </script>
+
+</body>
+</html>

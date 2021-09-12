@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simarmas - Gar</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/fav.png"/>
+
+</head>
+<body>
+
+    <div>
+        <div class="home">
+            <div data-scalar-y="11" data-scalar-x="1" class="bg" data-invert-x="false" data-invert-y="false" id="scene-bg">
+                <img data-depth=".1" da src="./assets/images/home_bg.png"  alt="">
+            </div>
+            <div data-scalar-y="13" id="scene-pohon-kanan">
+                <img data-depth=".1" src="./assets/images/home_trees_kanan.png" alt="">
+            </div>
+            <div class="" id="scene-pohon-kiri">
+                <img src="./assets/images/home_trees_kiri.png" data-depth=".1" alt="">
+            </div>
+            <div data-scalar-x="5" class="kiri-bawah"  data-relative-input="true" id="scene-rumput-bawah-kiri">
+                <img data-depth=".3" class="home_daun_kiri_bawah" src="./assets/images/home_daun_kiri_bawah.png" alt="">
+            </div>
+            <div data-scalar-x="5" data-relative-input="true" class="kanan-bawah" id="scene-rumput-bawah-kanan">
+                <img data-depth=".3" class="home_daun_kiri_bawah" src="./assets/images/home_daun_kanan_bawah.png" alt="">
+            </div>
+            <div class="birds">
+                <div class="birds-inner-c">
+                    <div class="bird_1" id="scene-bird-1">
+                        <img data-depth=".7" src="./assets/images/home_bird_1.png" alt="">
+                    </div>
+                    <div class="bird_2" id="scene-bird-2">
+                        <img data-depth=".8" src="./assets/images/home_bird_2.png" alt="">
+                    </div>
+                    <div class="bird_3" id="scene-bird-3">
+                        <img data-depth=".5" src="./assets/images/home_bird_3.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="caption">
+                <h1 class="home-h1">NATURE <br>SUSTAIN THOSE<br>who sustain her</h1>
+                <h5 class="home-h5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nostrum doloribus harum. Iure perspiciatis saepe ullam maiores dolore officia ducimus.</h5>
+                <a href="" class="home-a">
+                    <span>Discover Now</span>
+                    <svg class="w-6 h-6" fill="#2F855A" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+
+            </div>
+            <div id="topbar-c"></div>
+        </div>
+    </div>
+
+
+    <script src="./assets/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+    <script>
+        const scene = document.querySelectorAll("[id^='scene']");
+        scene.forEach(s => {
+            new Parallax(s);
+        })
+
+        function detectMob() {
+            console.log(window.innerWidth, window.innerHeight)
+            return (  window.innerWidth <= 800  );
+        }
+
+
+        if(detectMob()) {
+            const img = document.querySelector('#btn-menu img');
+            const imgSrc = img.src;
+            img.src = imgSrc.replace('white', 'black');
+        }
+    </script>
+
+</body>
+</html>
