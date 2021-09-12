@@ -1,0 +1,161 @@
+﻿<krpano version="1.20.7" title="Virtual Tour">
+
+	<!-- <include url="skin/vtourskin.xml" /> -->
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               maps_loadonfirstuse="true"
+	               gyro="true"
+	               gyro_keeplookingdirection="false"
+	               webvr="true"
+	               webvr_keeplookingdirection="true"
+	               webvr_prev_next_hotspots="true"
+	               autotour="true"
+	               littleplanetintro="false"
+	               followmousecontrol="false"
+	               title="false"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.4"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+		delayedcall(0, skin_hideskin() );
+	</action>
+
+
+	
+	<scene name="scene_gudang_3_Panorama" title="gudang 3 Panorama" onstart="" thumburl="panos/gudang_3_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/gudang_3_Panorama.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/gudang_3_Panorama.tiles/pano_%s.jpg" />
+		</image>
+
+
+		<!-- Radar -->
+		<layer name="backgroundradar" 
+			   url="plugins/radar/background-radar.png" 
+			   align="lefttop" 
+			   scale="0.4"
+			   keep="true"
+		       edge="center"
+		       x="615" y="350" />
+
+		<plugin name="radar"
+		        url.flash=""
+		        url.html5="plugins/radar/radar_source.js"
+		        parent="map"
+		        align="lefttop"
+		        edge="center"
+		        x="615" y="350"
+		        scale="0.11"
+		        heading="0.0"
+		        headingoffset="90.0"
+		        fillcolor="0xFFFFFF"
+		        fillalpha="0.5"
+		        linewidth="0.0"
+		        linecolor="0x000000"
+		        linealpha="0.3"
+		        invert="false"
+		        />
+        <!-- Radar -->
+
+		<!-- Hotspot, Youtube Player, Blink Animation -->
+		<view fov.mobile="115" />
+		<include url="plugins/youtube-player/youtube-player.xml" />
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xFFFFFF,0x999999);" />
+
+		<hotspot name="hotspot_1"
+				 url="plugins/youtube-player/a-2.png"
+		         scale="0.4"
+		         zoom="true"
+		         ath="-20.5" 
+		         atv="-5"
+				 onover="tween(alpha,1);tween(scale,1);" 
+				 onout="tween(alpha,0.4);tween(scale,0.4); wait(0.5); hotspot_animate(get(name));" 
+				 onloaded="wait(0.5); hotspot_animate(get(name));" 
+		         onclick="looktohotspot(get(name),90); youtubeplayer_open('QUZ83WcedK0');"
+		         />
+
+		<hotspot name="hotspot_2"
+		         url="plugins/youtube-player/b-2.png"
+		         scale="0.4"
+		         zoom="true"
+		         ath="+26.5" 
+		         atv="0"
+				 onover="tween(alpha,1);tween(scale,1);" 
+				 onout="tween(alpha,0.4);tween(scale,0.4); wait(0.5); hotspot_animate(get(name));" 
+				 onloaded="wait(0.5); hotspot_animate(get(name));" 
+		         onclick="looktohotspot(get(name),90); youtubeplayer_open('cVjyDgFrb2g');"
+		         />
+
+		<action name="hotspot_animate">
+		  if(hotspot[%1].loaded,
+		    tween(hotspot[%1].alpha, 0.2, 1.0, default, tween(hotspot[%1].alpha, 1.0, 1.0, default, hotspot_animate(%1) ) );
+		  );
+		</action>
+		<!-- Hotspot, Youtube Player, Blink Animation -->
+
+	</scene>
+
+
+</krpano>
