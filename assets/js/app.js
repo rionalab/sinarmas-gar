@@ -78,8 +78,9 @@ const sidebarContent = `
             </h3>
             <div>
                 <div class="list">
-                    <a href="">palm oil planation</a><hr>
-                    <a href="">high convertion value (HCV)</a><hr>
+                    <a href="https://rionalab.github.io/sinarmas-gar/map.html">The Map</a><hr>
+                    <a href="https://rionalab.github.io/sinarmas-gar/harvesting-process.html">harvesting proccess</a><hr>
+                    <a href="">harvesting proccess</a><hr>
                     <a href="">high carbon stock (HCS)</a><hr>
                     <a href="">peatland</a><hr>
                     <a href="">mills</a><hr>
